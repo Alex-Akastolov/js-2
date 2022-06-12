@@ -59,7 +59,7 @@ console.log('------------')
 /* eslint-disable capitalized-comments */
 
 function defUpperStr(str){
-    return (str || 'Что нибудь').toUpperCase()
+    return (str || 'Default text').toUpperCase()
 };
 // console.log(defUpperStr('My text')); // MY TEXT
 console.log(defUpperStr('Что нибудь'));
@@ -208,8 +208,8 @@ function ageClassification(num) {
                     : 'средний возраст'
                 : 'молодой возраст'
             : 'детский возраст'
-        : 'null'
-};
+        : null;
+}
 
 // console.log('-1 :', ageClassification(-1)); // -1 : null
 
@@ -247,25 +247,23 @@ console.log('130 :', ageClassification(130))
 console.log('------------')
 
 
-/*
- * Блок тестирования:
- * console.log(1, ageClassification(-1) === null);
- * console.log(2, ageClassification(1) === 'детский возраст');
- * console.log(3, ageClassification(24) === 'детский возраст');
- * console.log(4, ageClassification(24.01) === 'молодой возраст');
- * console.log(5, ageClassification(44) === 'молодой возраст');
- * console.log(6, ageClassification(44.01) === 'средний возраст');
- * console.log(7, ageClassification(65) === 'средний возраст');
- * console.log(8, ageClassification(65.01) === 'пожилой возраст');
- * console.log(9, ageClassification(75) === 'пожилой возраст');
- * console.log(10, ageClassification(75.01) === 'старческий возраст');
- * console.log(11, ageClassification(90) === 'старческий возраст');
- * console.log(12, ageClassification(90.01) === 'долгожители');
- * console.log(13, ageClassification(122) === 'долгожители');
- * console.log(14, ageClassification(122.01) === null);
- * console.log(15, ageClassification(150) === null);
- */
-
+// Блок тестирования:
+ console.log(1, ageClassification(-1) === null);
+ console.log(2, ageClassification(1) === 'детский возраст');
+ console.log(3, ageClassification(24) === 'детский возраст');
+ console.log(4, ageClassification(24.01) === 'молодой возраст');
+ console.log(5, ageClassification(44) === 'молодой возраст');
+ console.log(6, ageClassification(44.01) === 'средний возраст');
+ console.log(7, ageClassification(65) === 'средний возраст');
+ console.log(8, ageClassification(65.01) === 'пожилой возраст');
+ console.log(9, ageClassification(75) === 'пожилой возраст');
+ console.log(10, ageClassification(75.01) === 'старческий возраст');
+ console.log(11, ageClassification(90) === 'старческий возраст');
+ console.log(12, ageClassification(90.01) === 'долгожители');
+ console.log(13, ageClassification(122) === 'долгожители');
+ console.log(14, ageClassification(122.01) === null);
+ console.log(15, ageClassification(150) === null);
+ 
 /*
  * #7
  *
@@ -331,27 +329,28 @@ function mainFunc(a, b, func) {
 
 // cbRandom(a, b) – вычисляет и возвращает произвольное целое число в диапазоне между a и b включительно.
 
-function funcRandom(min, max) {
+function cbRandom(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-console.log(mainFunc(2, 5, funcRandom))
+console.log(mainFunc(2, 5, cbRandom))
+console.log(mainFunc(10, 30, cbRandom))
 
 // cbPow(a, b) – вычисляет и возвращает результат возведения числа a в степень b.
 
-function funcPow(num, pow) {
+function cbPow(num, pow) {
     return Math.pow(num, pow);
 }
 
-console.log(mainFunc(2, 5, funcPow))
+console.log(mainFunc(2, 5, cbPow))
 
 // cbAdd(a, b) – вычисляет и возвращает сумму двух чисел a и b.
 
-function funcAdd(a, b) {
+function cbAdd(a, b) {
     return a + b;
 }
 
-console.log(mainFunc(2, 5, funcAdd))
+console.log(mainFunc(2, 5, cbAdd))
 
 /*
  * mainFunc() должна возвращать результат работы переданной ей возвратной функции, например:
